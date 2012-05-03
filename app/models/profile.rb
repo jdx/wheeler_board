@@ -6,7 +6,7 @@ class Profile < ActiveRecord::Base
   mount_uploader :avatar, AvatarUploader
 
   validates :avatar, presence: true
-  validates :name, presence: true, uniqueness: true
+  validates :name, presence: true
 
   def to_s
     name
