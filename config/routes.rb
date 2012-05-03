@@ -7,5 +7,9 @@ WheelerBoard::Application.routes.draw do
   end
   resource :status
   resources :wheelers
+  namespace :admin do
+    resources :employees
+    root to: 'employees#index'
+  end
   root to: 'home#index'
 end

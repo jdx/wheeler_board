@@ -11,7 +11,7 @@ class Wheeler < ActiveRecord::Base
   validates :description, presence: true, length: { maximum: 140 }
   validates :date, presence: true
 
-  paginates_per 2
+  paginates_per 5
 
   private
 
