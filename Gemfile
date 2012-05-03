@@ -1,6 +1,16 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.3'
+gem 'foreman'
+gem 'thin'
+
+gem 'fog'
+gem 'carrierwave'
+gem 'simple_form'
+gem 'devise'
+gem 'omniauth-google-oauth2'
+gem 'rmagick'
+gem 'kaminari', '~> 0.13'
 
 gem 'haml'
 
@@ -17,7 +27,12 @@ group :production do
   gem 'pg'
 end
 
+group :test do
+  gem 'pry-rails'
+end
+
 group :development do
   gem 'sqlite3'
+  gem 'heroku'
 end
 

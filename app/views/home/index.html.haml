@@ -1,1 +1,21 @@
-%h1 Wheeler board
+- content_for :wheeler do
+  = image_tag @current_wheeler.employee.profile.avatar
+.hero-unit
+  %h2
+    It's been
+    %strong= time_ago_in_words(@current_wheeler.date)
+    since
+    %strong= @current_wheeler.employee
+    broke Tapjoy.
+  %p The record for uptime is <strong>#{10}</strong> days, which was broken by <strong>#{'Mike'}</strong>.
+- @wheelers.each do |wheeler|
+  .row
+    .span3
+      = image_tag wheeler.employee.profile.avatar.thumb
+      = image_tag wheeler.lgtm_employee.profile.avatar.thumb if wheeler.lgtm_employee
+    .span4
+      %h3= "#{wheeler.employee}'s wheeler on #{wheeler.date.to_s(:short)}"
+      %blockquote
+        %p= wheeler.description
+        %small= wheeler.reporter
+= paginate @wheelers

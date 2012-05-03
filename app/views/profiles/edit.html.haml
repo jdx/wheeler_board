@@ -1,0 +1,5 @@
+%h1 Update profile
+= simple_form_for @profile, method: :put, url: employee_profile_path, html: { class: 'well' } do |f|
+  = f.input :name
+  = f.input :avatar, hint: (image_tag(@profile.avatar.thumb) if @profile.avatar?)
+  = f.button :submit, "Update Profile"
