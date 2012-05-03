@@ -27,7 +27,7 @@ class Wheeler < ActiveRecord::Base
   def notify_campfire
     notification = "WheelerBoard: http://wheeler-board.tapjoy.net #{profile} broke Tapjoy #{time_ago_in_words(date)} ago. It's been #{uptime} since the last wheeler."
     notification += " lgtm'ed by #{lgtm_employee}." if lgtm_employee
-    notification += "\"#{description}\" - #{reporter}"
+    notification += " \"#{description}\" - #{reporter}"
     Rails.logger.info notification
     CAMPFIRE.speak notification if Rails.env.production?
   end
