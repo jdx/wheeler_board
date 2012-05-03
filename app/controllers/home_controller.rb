@@ -6,6 +6,10 @@ class HomeController < ApplicationController
     return redirect_to edit_employee_profile_path unless current_employee.profile
     @current_wheeler = Wheeler.order('date desc, created_at desc').first
     return redirect_to new_wheeler_path unless @current_wheeler
+    @max_wheeler = Wheeler.find_by_sql('select *, date, (lag(date) over (ORDER BY date)) as prev_date from wheelers order by (date - lag(date) over (ORDER BY date)) desc limit 1 offset 1').first
+    if @max_wheeler
+      @max_uptime = view_context.time_ago_in_words Time.now - (@max_wheeler.date - DateTime.parse(@max_wheeler.prev_date)).seconds
+    end
     @wheelers = Wheeler.order('date desc, created_at desc').page params[:page]
   end
 end

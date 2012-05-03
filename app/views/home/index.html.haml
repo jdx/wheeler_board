@@ -1,20 +1,21 @@
 - content_for :wheeler do
-  = image_tag @current_wheeler.employee.profile.avatar, width: '100%'
+  = image_tag @current_wheeler.profile.avatar, width: '100%'
 .hero-unit
   %h2
     It's been
     %strong= time_ago_in_words(@current_wheeler.date)
     since
-    %strong= @current_wheeler.employee
+    %strong= @current_wheeler.profile
     broke Tapjoy.
-  %p The record for uptime is <strong>#{10}</strong> days, which was broken by <strong>#{'Mike'}</strong>.
+  - if @max_wheeler
+    %p The record for uptime is <strong>#{@max_wheeler.uptime}</strong>, which was broken by <strong>#{@max_wheeler.profile}</strong>.
 - @wheelers.each do |wheeler|
   .row
     .span3
-      = image_tag wheeler.employee.profile.avatar.thumb
+      = image_tag wheeler.profile.avatar.thumb
       = image_tag wheeler.lgtm_employee.profile.avatar.thumb if wheeler.lgtm_employee
     .span4
-      %h3= "#{wheeler.employee}'s wheeler on #{l wheeler.date, format: :short}"
+      %h3= "#{wheeler.profile}'s wheeler on #{l wheeler.date, format: :short}"
       - if wheeler.lgtm_employee
         %p lgtm'ed by: #{wheeler.lgtm_employee}
       %blockquote

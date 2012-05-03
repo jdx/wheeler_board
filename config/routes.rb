@@ -8,8 +8,8 @@ WheelerBoard::Application.routes.draw do
   resource :status
   resources :wheelers
   namespace :admin do
-    resources :employees
-    root to: 'employees#index'
+    resources :profiles
+    root to: 'profiles#index'
   end
   root to: 'home#index'
 end

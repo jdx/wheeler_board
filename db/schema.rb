@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(:version => 20120503045603) do
   end
 
   create_table "wheelers", :force => true do |t|
-    t.integer  "employee_id",      :null => false
+    t.integer  "profile_id",       :null => false
     t.integer  "lgtm_employee_id"
     t.integer  "reporter_id",      :null => false
     t.string   "description",      :null => false

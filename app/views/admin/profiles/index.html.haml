@@ -1,0 +1,7 @@
+%h1 Profiles
+%table.table.table-bordered
+  - @profiles.each do |profile|
+    %tr
+      %td= image_tag(profile.avatar.thumb)
+      %td= link_to profile, admin_profile_path(profile)
+= link_to "New profile", new_admin_profile_path, class: 'btn'

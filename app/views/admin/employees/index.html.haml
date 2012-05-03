@@ -1,5 +1,0 @@
-%table.table.table-bordered
-  - @employees.each do |employee|
-    %tr
-      %td= image_tag(employee.profile.avatar.thumb) if employee.profile
-      %td= link_to employee, admin_employee_path(employee)

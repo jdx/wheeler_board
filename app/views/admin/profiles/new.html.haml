@@ -1,0 +1,6 @@
+%h1 New profile
+= simple_form_for @profile, url: admin_profiles_path do |f|
+  = f.input :name
+  = f.input :avatar, hint: (image_tag(@profile.avatar.thumb) if @profile.avatar?)
+  = f.button :submit
+= link_to "Back to index", admin_profiles_path, class: 'btn'

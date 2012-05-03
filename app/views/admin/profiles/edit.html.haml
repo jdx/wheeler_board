@@ -1,0 +1,8 @@
+- content_for :wheeler do
+  = image_tag @profile.avatar, width: '100%'
+%h1 Edit profile
+= simple_form_for @profile, url: admin_profile_path(@profile) do |f|
+  = f.input :name
+  = f.input :avatar, hint: (image_tag(@profile.avatar.thumb) if @profile.avatar?)
+  = f.button :submit
+= link_to "Back to index", admin_profiles_path, class: 'btn'

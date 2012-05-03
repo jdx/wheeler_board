@@ -1,0 +1,5 @@
+- content_for :wheeler do
+  = image_tag @profile.avatar, width: '100%'
+%h1= @profile
+= link_to "Edit", edit_admin_profile_path(@profile), class: 'btn'
+= link_to "Back to index", admin_profiles_path, class: 'btn'

@@ -4,6 +4,7 @@ gem 'rails', '3.2.3'
 gem 'foreman'
 gem 'thin'
 
+gem 'tinder', '~> 1.8'
 gem 'fog'
 gem 'carrierwave'
 gem 'simple_form'
@@ -32,7 +33,6 @@ group :test do
 end
 
 group :development do
-  gem 'sqlite3'
   gem 'heroku'
 end
 
