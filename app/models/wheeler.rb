@@ -5,6 +5,8 @@ class Wheeler < ActiveRecord::Base
   belongs_to :lgtm_employee, class_name: 'Employee'
   belongs_to :reporter, class_name: 'Employee'
 
+  after_commit :recalculate_uptimes
+
   validate :valid_date?
   validates :employee, presence: true
   validates :reporter, presence: true
@@ -14,6 +16,10 @@ class Wheeler < ActiveRecord::Base
   paginates_per 5
 
   private
+
+  def find_max_wheeler
+    puts 'IMPLEMENT ME!'
+  end
 
   def valid_date?
     if date > Time.now

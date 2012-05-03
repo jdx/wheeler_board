@@ -14,7 +14,9 @@
       = image_tag wheeler.employee.profile.avatar.thumb
       = image_tag wheeler.lgtm_employee.profile.avatar.thumb if wheeler.lgtm_employee
     .span4
-      %h3= "#{wheeler.employee}'s wheeler on #{wheeler.date.to_s(:short)}"
+      %h3= "#{wheeler.employee}'s wheeler on #{l wheeler.date, format: :short}"
+      - if wheeler.lgtm_employee
+        %p lgtm'ed by: #{wheeler.lgtm_employee}
       %blockquote
         %p= wheeler.description
         %small= wheeler.reporter
