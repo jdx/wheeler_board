@@ -3,7 +3,7 @@
 .hero-unit
   %h2
     It's been
-    %strong= time_ago_in_words(@current_wheeler.date)
+    %strong= time_ago_in_words(@current_wheeler.created_at)
     since
     %strong= @current_wheeler.profile
     broke Tapjoy.
@@ -15,7 +15,7 @@
       = image_tag wheeler.profile.avatar.thumb
       = image_tag wheeler.lgtm_employee.profile.avatar.thumb if wheeler.lgtm_employee
     .span4
-      %h3= "#{wheeler.profile}'s wheeler on #{l wheeler.date, format: :short}"
+      %h3= "#{wheeler.profile}'s wheeler on #{l wheeler.created_at, format: :short}"
       - if wheeler.lgtm_employee
         %p lgtm'ed by: #{wheeler.lgtm_employee}
       %blockquote

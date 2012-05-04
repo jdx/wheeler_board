@@ -2,6 +2,5 @@
 = simple_form_for @wheeler do |f|
   = f.association :profile, label: "Who dun broke Tapjoy?"
   = f.association :lgtm_employee, collection: Employee.all, label: "lgtm'ed by"
-  = f.input :date
   = f.input :description
   = f.button :submit, class: 'nav'
