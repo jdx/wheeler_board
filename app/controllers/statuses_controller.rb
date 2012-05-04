@@ -2,6 +2,7 @@ class StatusesController < ApplicationController
   skip_before_filter :authenticate_employee!
 
   def show
+    headers['Access-Control-Allow-Origin'] = '*'
     @current_wheeler = Wheeler.order('created_at desc, created_at desc').first
     render json: {
       current_wheeler: {
