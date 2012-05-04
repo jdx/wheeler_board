@@ -8,6 +8,8 @@ class Profile < ActiveRecord::Base
   validates :avatar, presence: true
   validates :name, presence: true
 
+  default_scope order: :name
+
   def to_s
     name
   end
