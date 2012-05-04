@@ -22,7 +22,7 @@ class Wheeler < ActiveRecord::Base
   end
 
   def uptime_in_words
-    time_ago_in_words DateTime.now - uptime.seconds
+    time_ago_in_words DateTime.now - uptime.seconds if uptime
   end
 
   def recalculate_uptime
