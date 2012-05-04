@@ -11,7 +11,7 @@ class StatusesController < ApplicationController
         date: view_context.time_ago_in_words(@current_wheeler.created_at),
         date_timestamp: @current_wheeler.created_at,
         description: @current_wheeler.description,
-        info: @current_wheeler
+        info: @current_wheeler.to_s
       }
     }
   end
