@@ -33,12 +33,16 @@ class Wheeler < ActiveRecord::Base
     end
   end
 
+  def to_s
+    str = "#{profile} broke Tapjoy #{time_ago_in_words(created_at)} ago. It's been #{uptime_in_words} since the last wheeler."
+    str += " lgtm'ed by #{lgtm_employee}." if lgtm_employee
+    str += " \"#{description}\" - #{reporter}"
+  end
+
   private
 
   def notify_campfire
-    notification = "WheelerBoard: http://wheeler-board.tapjoy.net #{profile} broke Tapjoy #{time_ago_in_words(created_at)} ago. It's been #{uptime_in_words} since the last wheeler."
-    notification += " lgtm'ed by #{lgtm_employee}." if lgtm_employee
-    notification += " \"#{description}\" - #{reporter}"
+    notification = "WheelerBoard: http://wheeler-board.tapjoy.net #{self}"
     Rails.logger.info notification
     CAMPFIRE.speak notification if Rails.env.production?
   end
