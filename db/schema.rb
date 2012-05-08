@@ -52,4 +52,6 @@ ActiveRecord::Schema.define(:version => 20120504002612) do
     t.integer  "uptime"
   end
 
+  add_index "wheelers", ["uptime"], :name => "index_wheelers_on_uptime"
+
 end
