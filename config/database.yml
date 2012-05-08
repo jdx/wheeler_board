@@ -1,14 +1,12 @@
-development:
-  adapter: postgresql
-  database: wheeler_board
+development: &default
+  adapter: sqlite3
+  database: db/wheeler_board_development.sqlite3
   pool: 5
   timeout: 5000
 
-test:
-  adapter: postgresql
-  database: wheeler_board_test
-  pool: 5
-  timeout: 5000
+test: &test
+  <<: *default
+  database: db/wheeler_board_test.sqlite3
 
 production:
   adapter: postgresql
