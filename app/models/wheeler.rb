@@ -36,8 +36,8 @@ class Wheeler < ActiveRecord::Base
 
   def to_s
     str = "#{profile} broke Tapjoy #{time_ago_in_words(created_at)} ago. It's been #{uptime_in_words} since the last wheeler."
-    str += " lgtm'ed by #{lgtm_employee}." if lgtm_employee
     str += " \"#{description}\" Reported by #{reporter}"
+    str += " lgtm'ed by #{lgtm_employee}." if lgtm_employee
   end
 
   private
