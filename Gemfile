@@ -35,6 +35,6 @@ end
 
 group :development do
   gem 'heroku'
-  gem 'mysql2'
+  gem 'sqlite3'
 end
 
