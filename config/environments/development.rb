@@ -38,6 +38,7 @@ WheelerBoard::Application.configure do
   dev = YAML::load_file("#{Rails.root}/config/dev.yml")
   ENV['AWS_ACCESS_KEY_ID']     = dev['aws_key']
   ENV['AWS_SECRET_ACCESS_KEY'] = dev['aws_secret']
+  ENV['AWS_BUCKET']            = dev['aws_bucket']
   ENV['GOOGLE_KEY']            = dev['google_key']
   ENV['GOOGLE_SECRET']         = dev['google_secret']
 end
