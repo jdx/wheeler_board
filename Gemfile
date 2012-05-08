@@ -30,9 +30,11 @@ end
 
 group :test do
   gem 'pry-rails'
+  gem 'mysql2'
 end
 
 group :development do
   gem 'heroku'
+  gem 'mysql2'
 end
 
