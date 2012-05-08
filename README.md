@@ -7,8 +7,6 @@
 
 2) Point your redirect URL to some fake domain, and don't forget to set up the port numbers, if applicable.
 
-![fake domain](http://i.imgur.com/S8oxx.jpg)
-
 ## Setting up the Environment
 1) In order to test locally, put `wheeler.com` (or whatever domain you chose in the previous step) in your `etc/hosts` file:
 
