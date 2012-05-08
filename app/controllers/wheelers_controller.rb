@@ -7,7 +7,6 @@ class WheelersController < ApplicationController
 
   def create
     @wheeler = Wheeler.new(params[:wheeler])
-    @wheeler.reporter = current_employee
     if @wheeler.save
       redirect_to root_path
     else

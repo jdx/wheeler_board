@@ -1,11 +1,11 @@
 class Wheeler < ActiveRecord::Base
   include ActionView::Helpers
 
-  attr_accessible :profile_id, :lgtm_employee_id, :description
+  attr_accessible :profile_id, :lgtm_employee_id, :description, :reporter_id
 
   belongs_to :profile
-  belongs_to :lgtm_employee, class_name: 'Employee'
-  belongs_to :reporter, class_name: 'Employee'
+  belongs_to :lgtm_employee, class_name: 'Profile'
+  belongs_to :reporter, class_name: 'Profile'
 
   after_create :recalculate_uptime
   after_create :notify_campfire

@@ -1,6 +1,7 @@
 %h1 Report Wheeler
 = simple_form_for @wheeler do |f|
-  = f.association :profile, label: "Who dun broke Tapjoy?"
-  = f.association :lgtm_employee, collection: Employee.all, label: "lgtm'ed by"
-  = f.input :description
-  = f.button :submit, class: 'nav'
+  = f.association :reporter, label: "Reported by"
+  = f.association :profile, label: "Who broke Tapjoy?"
+  = f.association :lgtm_employee, label: "LGTM'ed by"
+  = f.input :description, label: "What broke?"
+  = f.button :submit, "Report Wheeler", class: 'btn-danger'

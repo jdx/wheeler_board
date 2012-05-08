@@ -13,7 +13,7 @@
   .row
     .span3
       = image_tag wheeler.profile.avatar.thumb
-      = image_tag wheeler.lgtm_employee.profile.avatar.thumb if wheeler.lgtm_employee
+      = image_tag wheeler.lgtm_employee.avatar.thumb if wheeler.lgtm_employee
     .span4
       %h3= "#{wheeler.profile}'s wheeler on #{l wheeler.created_at, format: :short}"
       - if wheeler.lgtm_employee
