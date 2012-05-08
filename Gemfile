@@ -30,7 +30,7 @@ end
 
 group :test do
   gem 'pry-rails'
-  gem 'mysql2'
+  gem 'sqlite3'
 end
 
 group :development do
