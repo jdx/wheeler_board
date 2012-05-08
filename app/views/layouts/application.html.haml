@@ -14,7 +14,9 @@
           - if employee_signed_in?
             .btn-group.pull-right
               - if current_employee.profile
-                = link_to "<i class='icon-fire icon-white'></i> Report Wheeler".html_safe, new_wheeler_path, class: 'btn btn-danger'
+                = link_to new_wheeler_path, class: 'btn btn-danger' do
+                  %i{class: 'icon-fire icon-white'}
+                  Report Wheeler
               %a.btn.dropdown-toggle{ href: '#', data: { toggle: :dropdown } }
                 %i.icon-user
                 = current_employee
@@ -25,7 +27,9 @@
                 %li.divider
                 %li= link_to "Logout", destroy_employee_session_path, method: :delete
           - else
-            = link_to "<i class='icon-user'></i> Login".html_safe, employee_omniauth_authorize_path(:google_oauth2), class: 'btn pull-right'
+            = link_to employee_omniauth_authorize_path(:google_oauth2), class: 'btn pull-right' do
+              %i{class: 'icon-user'}
+              Login
     .container
       .row
         .span8
