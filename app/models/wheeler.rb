@@ -28,6 +28,7 @@ class Wheeler < ActiveRecord::Base
   def recalculate_uptime
     if prev_wheeler
       update_column :uptime, (created_at - prev_wheeler.created_at).to_i
+      prev_wheeler.recalculate_uptime
     else
       update_column :uptime, 0
     end
