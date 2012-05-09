@@ -34,4 +34,20 @@ WheelerBoard::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  dev_env_file = "#{Rails.root}/config/dev.yml"
+  dev = YAML::load_file(dev_env_file)
+  ENV['AWS_ACCESS_KEY_ID']     = dev['aws_key']
+  ENV['AWS_SECRET_ACCESS_KEY'] = dev['aws_secret']
+  ENV['AWS_BUCKET']            = dev['aws_bucket']
+  ENV['GOOGLE_KEY']            = dev['google_key']
+  ENV['GOOGLE_SECRET']         = dev['google_secret']
+
+  keys = %w(aws_key aws_secret aws_bucket google_key google_secret)
+  keys.each do |key|
+    value = dev[key]
+    if value.blank? || value == 'replace this'
+      raise "Please set #{key} in #{Rails.root}/config/dev.yml"
+    end
+  end
 end

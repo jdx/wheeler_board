@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120504002612) do
+ActiveRecord::Schema.define(:version => 20120508171007) do
 
   create_table "employees", :force => true do |t|
     t.string   "email",                  :default => "",    :null => false
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(:version => 20120504002612) do
     t.integer  "uptime"
   end
 
+  add_index "wheelers", ["created_at"], :name => "index_wheelers_on_created_at"
   add_index "wheelers", ["uptime"], :name => "index_wheelers_on_uptime"
 
 end
