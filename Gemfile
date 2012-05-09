@@ -30,9 +30,11 @@ end
 
 group :test do
   gem 'pry-rails'
+  gem 'sqlite3'
 end
 
 group :development do
   gem 'heroku'
+  gem 'sqlite3'
 end
 
