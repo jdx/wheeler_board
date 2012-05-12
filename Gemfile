@@ -12,6 +12,7 @@ gem 'devise'
 gem 'omniauth-google-oauth2'
 gem 'rmagick'
 gem 'kaminari', '~> 0.13'
+gem 'pry-rails'
 
 gem 'haml'
 
@@ -29,7 +30,6 @@ group :production do
 end
 
 group :test do
-  gem 'pry-rails'
   gem 'sqlite3'
 end
 
