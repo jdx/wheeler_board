@@ -1,3 +1,6 @@
-.hero-unit
-  %h1 This is WheelerBoard.
-  %p Wave to Wheeler, then #{ link_to "log in", employee_omniauth_authorize_path(:google_oauth2) } to continue
+- ab_test 'sign_up_text', 'without_site_info', 'with_site_info' do |sign_up_text|
+  .hero-unit
+    %h1 This is WheelerBoard.
+    - if sign_up_text == 'with_site_info'
+      %p The wheeler board is where we track who broke Tapjoy.
+    %p Wave to Wheeler, then #{ link_to "log in", employee_omniauth_authorize_path(:google_oauth2) } to continue

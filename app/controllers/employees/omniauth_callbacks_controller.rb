@@ -7,5 +7,6 @@ class Employees::OmniauthCallbacksController < Devise::OmniauthCallbacksControll
     flash[:notice] = I18n.t "devise.omniauth_callbacks.success", kind: "Google"
     sign_in_and_redirect @employee, :event => :authentication
     session["devise.google_data"] = request.env["omniauth.auth"]
+    finished('sign_up_text')
   end
 end
