@@ -36,7 +36,6 @@ group :test do
 end
 
 group :development do
-  gem 'heroku'
   gem 'sqlite3'
+  gem 'sextant'
 end
-
