@@ -28,7 +28,7 @@
                 %li.divider
                 %li= link_to "Logout", destroy_employee_session_path, method: :delete
           - else
-            = link_to employee_omniauth_authorize_path(:google_oauth2), class: 'btn pull-right' do
+            = link_to employee_omniauth_authorize_path(:tapjoy), class: 'btn pull-right' do
               %i{class: 'icon-user'}
               Login
     .container

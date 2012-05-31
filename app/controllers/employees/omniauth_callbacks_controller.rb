@@ -1,12 +1,10 @@
 class Employees::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-  def google_oauth2
+  def tapjoy
     employee = request.env["omniauth.auth"]["info"]
-    return render text: "You must be logged into Google as a Tapjoy employee.", status: :unauthorized unless employee.email.ends_with? 'tapjoy.com'
     @employee = Employee.find_or_create_by_email(employee["email"].downcase)
 
-    flash[:notice] = I18n.t "devise.omniauth_callbacks.success", kind: "Google"
+    flash[:notice] = I18n.t "devise.omniauth_callbacks.success", kind: "Tapjoy"
     sign_in_and_redirect @employee, :event => :authentication
-    session["devise.google_data"] = request.env["omniauth.auth"]
     finished('sign_up_text')
   end
 end

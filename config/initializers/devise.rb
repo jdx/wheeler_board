@@ -210,7 +210,7 @@ Devise.setup do |config|
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
-  config.omniauth :google_oauth2, ENV['GOOGLE_KEY'], ENV['GOOGLE_SECRET'], { :access_type => 'online', :approval_prompt => '' }
+  config.omniauth :tapjoy, ENV['TAPJOY_KEY'] || '33c752bae5b2bf93d5eae8a8b86bf68f81d28ece3fef8f665ed452740713b2cd' , ENV['TAPJOY_SECRET'] || '0b4f45b5e6097257b70c85360e59dccc2b4f63bf9fcd990d41ed76b46740f08f'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
