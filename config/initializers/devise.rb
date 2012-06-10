@@ -9,9 +9,6 @@ Devise.setup do |config|
   # Configure the class responsible to send e-mails.
   # config.mailer = "Devise::Mailer"
 
-  # Automatically apply schema changes in tableless databases
-  config.apply_schema = false
-
   # ==> ORM configuration
   # Load and configure the ORM. Supports :active_record (default) and
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
@@ -111,10 +108,6 @@ Devise.setup do |config|
   # If true, extends the user's remember period when remembered via cookie.
   # config.extend_remember_period = false
 
-  # If true, uses the password salt as remember token. This should be turned
-  # to false if you are not using database authenticatable.
-  config.use_salt_as_remember_token = true
-
   # Options to be passed to the created cookie. For instance, you can set
   # :secure => true in order to force SSL only cookies.
   # config.cookie_options = {}
@@ -210,7 +203,7 @@ Devise.setup do |config|
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
-  config.omniauth :tapjoy, ENV['TAPJOY_KEY'] || '33c752bae5b2bf93d5eae8a8b86bf68f81d28ece3fef8f665ed452740713b2cd' , ENV['TAPJOY_SECRET'] || '0b4f45b5e6097257b70c85360e59dccc2b4f63bf9fcd990d41ed76b46740f08f'
+  config.omniauth :tapjoy, ENV['TAPJOY_KEY'] || 'efed63db73f0690a2df2eea28d26f29aabefadc36616d1fb467f9abc44b4a2e0' , ENV['TAPJOY_SECRET'] || '69d15a4a9add18a61797858afd53421844e450dbefb519a0c8532dd21c1d9c17'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
