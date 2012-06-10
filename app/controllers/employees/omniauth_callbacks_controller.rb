@@ -5,6 +5,5 @@ class Employees::OmniauthCallbacksController < Devise::OmniauthCallbacksControll
 
     flash[:notice] = I18n.t "devise.omniauth_callbacks.success", kind: "Tapjoy"
     sign_in_and_redirect @employee, :event => :authentication
-    finished('sign_up_text')
   end
 end

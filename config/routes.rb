@@ -12,5 +12,4 @@ WheelerBoard::Application.routes.draw do
     root to: 'profiles#index'
   end
   root to: 'home#index'
-  mount Split::Dashboard, at: 'split'
 end

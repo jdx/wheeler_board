@@ -12,8 +12,6 @@ gem 'kaminari', '~> 0.13'
 gem 'pry-rails'
 gem 'rmagick'
 gem 'simple_form'
-gem 'split', require: 'split/dashboard'
-gem 'split-analytics', require: 'split/analytics'
 gem 'tinder', '~> 1.8'
 gem 'omniauth-tapjoy'
 
