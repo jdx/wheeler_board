@@ -15,7 +15,7 @@ gem 'simple_form'
 gem 'split', require: 'split/dashboard'
 gem 'split-analytics', require: 'split/analytics'
 gem 'tinder', '~> 1.8'
-gem 'tapjoy_client'
+gem 'omniauth-tapjoy'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
