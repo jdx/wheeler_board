@@ -50,7 +50,8 @@ class Wheeler < ActiveRecord::Base
       FLOWDOCK.push_to_team_inbox(
         subject: notification,
         link: 'http://wheeler-board.tapjoy.com',
-        tags: 'wheelerboard'
+        tags: 'wheelerboard',
+        content: notification
       )
     end
   end
