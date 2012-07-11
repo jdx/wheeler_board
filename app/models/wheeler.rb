@@ -8,7 +8,8 @@ class Wheeler < ActiveRecord::Base
   belongs_to :reporter, class_name: 'Profile'
 
   after_create :recalculate_uptime
-  after_create :notify_campfire
+  after_create :notify_flowdock
+  after_create :email_dev
   after_save :recalculate_uptime
 
   validates :profile, presence: true
@@ -42,10 +43,20 @@ class Wheeler < ActiveRecord::Base
 
   private
 
-  def notify_campfire
+  def notify_flowdock
     notification = "WheelerBoard: http://wheeler-board.tapjoy.net #{self}"
     Rails.logger.info notification
-    CAMPFIRE.speak notification if Rails.env.production?
+    if Rails.env.production?
+      FLOWDOCK.push_to_team_inbox(
+        subject: notification,
+        link: 'http://wheeler-board.tapjoy.com',
+        tags: 'wheelerboard'
+      )
+    end
+  end
+
+  def email_dev
+    WheelerMailer.notify(self).deliver
   end
 
 end

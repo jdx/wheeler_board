@@ -5,6 +5,7 @@ gem 'foreman'
 gem 'thin'
 
 gem 'carrierwave'
+gem 'flowdock'
 gem 'devise'
 gem 'fog'
 gem 'haml'
@@ -12,7 +13,6 @@ gem 'kaminari', '~> 0.13'
 gem 'pry-rails'
 gem 'rmagick'
 gem 'simple_form'
-gem 'tinder', '~> 1.8'
 gem 'omniauth-tapjoy'
 
 group :assets do

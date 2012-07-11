@@ -1,0 +1,4 @@
+%p= image_tag(@wheeler.profile.avatar.thumb)
+%p= image_tag @wheeler.lgtm_employee.avatar.thumb if @wheeler.lgtm_employee
+%p= @wheeler
+= simple_format @wheeler.description
